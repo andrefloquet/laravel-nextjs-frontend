@@ -5,7 +5,9 @@ import axios from '@/lib/axios'
 
 import Header from '@/app/(app)/Header'
 import PostCard from '@/components/PostCard'
+import PageContainer from '@/components/PageContainer'
 import PageListingContainer from '@/components/PageListingContainer'
+import PostLinks from '@/app/(app)/posts/PostLinks'
 
 const PostsIndexPage = () => {
 
@@ -21,9 +23,12 @@ const PostsIndexPage = () => {
     return (
         <>
             <Header title="Posts" />
-            <PageListingContainer>
-                <PostCard posts={posts} />
-            </PageListingContainer>
+            <PageContainer>
+                <PostLinks />
+                <PageListingContainer>
+                    <PostCard posts={posts} />
+                </PageListingContainer>
+            </PageContainer>
         </>
     )
 }
